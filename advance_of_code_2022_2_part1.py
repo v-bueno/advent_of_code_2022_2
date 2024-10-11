@@ -3,6 +3,10 @@ The goal of this program is to count the amount of valid password in passwords.t
 The password file is designed as such: each line contains a password policy and a corresponding password.
 A password is valid if it respects the given password policy.
 
+Here is how the password policy works: in each password policy there is a target letter and two numbers,
+the amount of appearance of the target letter must be higher or equal than the first number and lower or
+equal than the second number.
+
 Strategy : 
 1) Explore each line of the file 
 2) For each line, parse the line to extract the password policy and the given password
@@ -11,10 +15,10 @@ Strategy :
 password, if the target letter appears less then minimum_appearance then reject else increase nb_valid_pwd.
 5) Go to next line.
 
-
 Result : 
 Print the number of valid passwords in the file.
 """
+
 def open_password_file():
     password_file = open("passwords.txt","r")
     print(password_file)
